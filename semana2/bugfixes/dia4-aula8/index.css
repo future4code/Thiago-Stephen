@@ -25,6 +25,10 @@ button:focus {
     color: white;
 }
 
+button:hover {
+    background-color: #c44f00;
+}
+
 img {
     width: 100px;
 }
@@ -48,7 +52,7 @@ div img {
 }
 
 .botao-amarelo:hover {
-    background-color: #c44f00;
+    background-color:#c44f00;
 }
 
 .container {
