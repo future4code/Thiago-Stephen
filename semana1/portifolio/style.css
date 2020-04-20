@@ -1,16 +1,55 @@
 .topo {
     background-color: darkslategray;
-    height: 80px;
-    background-image: url(background-1.jpg);
+    height: 190px;
+    background-image: url(imagens/fundo2.jpg);
+    opacity: 0.6;
 }
 
 .meio {
+    position: relative;
     background-color: dimgray;
-    height: 500px;
+    height: 800px;
+    background-image: url(imagens/fundo1.jpg);
     
 }
 
-.rodape {
-    background-color: silver;
-    height: 65px;
+div > div {
+    border: 2px dashed dimgray;
+    border-radius: 20px; 
+  }
+
+  .foto { 
+    border: dodgerblue 2px;
+    float: left;
+    width: 8%;
+    margin: auto;
+    padding: 25px;
+  }
+
+.campo-texto-home {
+    float: left;
+    width: 500px;
+    height: 400px;
+    margin: 0px;
+    border: 2px dashed dimgray;
+    border-radius: 20px; 
+}
+
+    p {
+        font-size: 28px;
+    }
+
+.barra-botoes {
+    height: 40px;
+    border: 2px dashed dimgray;
+    border-radius: 20px;
+
+}
+
+.foto-projeto {
+    position: absolute;
+    border: dodgerblue 2px;
+    width: 8%;
+    margin: auto;
+    
 }
