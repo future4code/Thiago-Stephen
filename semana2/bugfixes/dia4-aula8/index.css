@@ -37,6 +37,13 @@ div>p:first-child {
     display: inline;
 }
 
+div>input {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-width: 10px;
+}
+
 div img {
     background:white;
     width: 60px;
@@ -120,6 +127,7 @@ td button {
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    
 }
 
 
