@@ -99,7 +99,9 @@ div:last-child {
 }
 
 table {
-    width: 60%;
+    width: 70%;
+    text-align: center;
+    padding-left: 345px;
 }
 
 td button {
