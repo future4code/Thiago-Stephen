@@ -36,21 +36,21 @@ grid-row: 1/6;
 
 18 order: 5;
 
-19
+19 order: -1;
 
-20
+20 grid-template-columns: 50%;
 
-21
+21 grid-template-columns: repeat(8, 12.5%);
 
-22
+22 grid-template-columns: 100px 3em 40%;
 
-23
+23 grid-template-columns: 1fr 5fr;
 
-24
+24 grid-template-columns: 50px 1fr 1fr 1fr 50px;
 
-25
+25 grid-template-columns: 75px 3fr 2fr;
 
-26
+26 grid-template-rows: 0fr 0fr 0fr 50px
 
 27
 
