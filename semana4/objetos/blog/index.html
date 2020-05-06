@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form name="criar-post">
+            <h2>crie seu post.</h2>
+
+            <h3>Título<input id="titulo" onchange="pegaValor()" type="text"></h3>
+
+            <h3>Autor<input id="autor" onchange="pegaValor()" type="text"></h3>
+
+            <h3>texto <textarea id="texto" onchange="pegaValor()"> </textarea></h3>
+
+            <button id="botao-postar" onclick="postar">postar</button>
+        </form>
+    </div>
+    
+</body>
+</html>
