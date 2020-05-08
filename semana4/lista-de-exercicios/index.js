@@ -24,4 +24,18 @@ quantidade total de números, 14
 12,64,44,84,48,14
 25,55,121,11,51,73,1111,283.
 
+Exercício 4
+o código faz uma comparação entre duas variaveis e um array 'números'
+é determinado duas variaveis, numero1 e numero2. cria-se um for of, para saber se os valores do array são:
+menor que infinity 'numero1' se não for, terá seu mesmo valor.
+maior que 0 'numero2' também terá o seu mesmo valor.
+será impresso no console:
+25
+25
+..........eu acho :)
+
+
+
+
+
 */
