@@ -45,7 +45,34 @@ c: true
 d: true
 e: true
 
+Exercício 3
+
+
+
+exercício 4
+let ladoA = 2
+let ladoB = 2
+let ladoC = 2
+
+let ladoIgual = ladoA === ladoB && ladoB === ladoC
+let doisIguais = ladoA === ladoB && ladoB !== ladoC || ladoB === ladoC && ladoC !== ladoA || ladoC === ladoA && ladoA !== ladoB
+let ladoDiferente = ladoA !== ladoB && ladoB !== ladoC
+
+if (ladoIgual){
+    console.log("o triangulo é Equilatero")
+}else if (doisIguais) {
+    console.log("o triangulo é Isósceles")
+}else if (ladoDiferente) {
+    console.log("o triangulo é Escaleno")
+}
+obs: desculpe, foi o unico jeito que encontrei de resolver a questão.... :)
 
 
 
 */
+
+
+
+
+
+
