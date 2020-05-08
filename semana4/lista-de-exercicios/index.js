@@ -67,9 +67,37 @@ if (ladoIgual){
 }
 obs: desculpe, foi o unico jeito que encontrei de resolver a questão.... :)
 
+Exercício 5
+let n1 = 2
+let n2 = 10
+
+if (n1 > n2) {
+    console.log(`o maior é ${n1}`)
+}else {
+    console.log(`o maior é ${n2}`)
+}
+if (n1 % n2 === 0){
+    console.log(`${n1} é divisivel por ${n2}`)
+}else {
+    console.log(`${n1} não é divisivel por ${n2}`)
+}
+if (n1 % n2 !== 0) {
+    console.log(`${n2} é divisivel por ${n1}`)
+}
+
+let diferenca = n1 - n2
+let diferencaPositiva = n2 - n1
+
+if (diferenca > 0) {
+    console.log(`a diferença entre eles é ${diferenca}`)
+}else {
+    console.log(`a diferença entre eles é ${diferencaPositiva}`)
+}
+
 
 
 */
+
 
 
 
