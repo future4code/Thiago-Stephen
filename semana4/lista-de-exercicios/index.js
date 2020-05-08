@@ -1,5 +1,5 @@
 // LISTA DE EXERCÍCIOS:
-// Exerccícios de interpretção de código.
+                                        // Exerccícios de interpretção de código.
 /* 
 Exercício 1
 o código converte o valor em dolar em reais. 
@@ -33,7 +33,17 @@ será impresso no console:
 25
 25
 ..........eu acho :)
+                                        //Exercícios de Lógica de Programação
+Exercício 1
 
+
+
+Exercício 2
+a: false
+b: true
+c: true
+d: true
+e: true
 
 
 
