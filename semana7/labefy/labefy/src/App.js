@@ -76,6 +76,14 @@ export class App extends React.Component {
       console.log(erro)
     })
   }
+  detalhePlaylist = (idList) => {
+    axios .get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${idList}/tracks`, axiosConfig)
+    .then(() => {
+      
+      this.mostraListaPlaylist()
+      console.log("detalhe")
+    })
+  }
   apagaPlaylist = (idList) => {
     axios .delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${idList}`, axiosConfig)
     .then(() => {
@@ -98,7 +106,11 @@ export class App extends React.Component {
             {this.state.ListaPlaylist.result.list.map(user => {
               return (
                 <li>
-                  {user.name}<BotaoDeleta onClick={() => this.apagaPlaylist(user.id)}> X </BotaoDeleta>
+                  {user.name}
+                  <button onClick={() => this.detalhePlaylist(user.name)}>▷</button>
+                  <BotaoDeleta onClick={() => this.apagaPlaylist(user.id)}>
+                     X 
+                  </BotaoDeleta>
                 </li>
               )
             })}
