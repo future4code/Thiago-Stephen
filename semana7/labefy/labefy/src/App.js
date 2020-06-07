@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import axios from 'axios'
-import Lista from './Components/PaginaLista'
+
 
 const ContainerDiv = styled.div`
   display: flex;
@@ -19,15 +19,20 @@ export class App extends React.Component {
   state = {
     name: " ",
     ListaPlaylist: {
-      quantity: 0,
-      list: [{
-        id: " ",
-        name: " ",
-      }]
-    }
+      "result": {
+          "quantity": "number",
+          "list": [
+              {
+                  "id": "string",
+                  "name": "string"
+              }
+          ]
+      }
+  }
   }
 
   componentDidMount = () => {
+    
     this.mostraListaPlaylist()
   }
 
@@ -39,8 +44,8 @@ export class App extends React.Component {
     }
     axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists", axiosConfig)
     .then(response => {
-      this.setState({ ListaPlaylist: response.data.result.list })
-      console.log(response.data.result.list)
+      this.setState({ ListaPlaylist: response.data })
+      console.log(response.data)
     })
     .catch(erro => {
       console.log(erro)
@@ -79,7 +84,17 @@ export class App extends React.Component {
           <button onClick={this.criaPlaylist}>criar</button>
         </section>
         <ListaPlaylist>
-          <Lista />
+          <h2>Minhas Playlists</h2>
+          <ul>
+            {this.state.ListaPlaylist.result.list.map(user => {
+              return (
+                <li>
+                  {user.name}
+                </li>
+              )
+            })}
+            
+          </ul>
         </ListaPlaylist>
       </ContainerDiv>
     )

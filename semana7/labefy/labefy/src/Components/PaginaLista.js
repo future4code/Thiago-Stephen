@@ -10,7 +10,7 @@ const PaginaLista = (props) => {
             <ul>
               {lista.map(playlist => {
                 return (
-                  <li key={playlist.}>
+                  <li key={playlist.name}>
                     {playlist.name}
                   </li>
                 )
