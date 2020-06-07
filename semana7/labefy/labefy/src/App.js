@@ -13,7 +13,18 @@ const ContainerDiv = styled.div`
 
 const ListaPlaylist = styled.div`
   border: 2px solid red;
+  width: 380px;
 `
+const BotaoDeleta = styled.span`
+  color: red;
+  font-size: 15px;
+  cursor: pointer;
+`
+const axiosConfig = {
+  headers: {
+    Authorization: "thiago-stephen-mello"
+  }
+};
 
 export class App extends React.Component {
   state = {
@@ -30,18 +41,14 @@ export class App extends React.Component {
       }
   }
   }
-
+  
   componentDidMount = () => {
     
     this.mostraListaPlaylist()
   }
-
+  
   mostraListaPlaylist = () => {
-    const axiosConfig = {
-      headers: {
-        Authorization: "thiago-stephen-mello"
-      }
-    }
+    
     axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists", axiosConfig)
     .then(response => {
       this.setState({ ListaPlaylist: response.data })
@@ -57,11 +64,7 @@ export class App extends React.Component {
     this.setState({name: novoNomeValue })
   }
   criaPlaylist = () => {
-    const axiosConfig = {
-      headers: {
-        Authorization: "thiago-stephen-mello"
-      }
-    };
+   
     const body = {
       name: this.state.name
     };
@@ -71,6 +74,12 @@ export class App extends React.Component {
     })
     .catch(erro => {
       console.log(erro)
+    })
+  }
+  apagaPlaylist = (idList) => {
+    axios .delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${idList}`, axiosConfig)
+    .then(() => {
+      this.mostraListaPlaylist()
     })
   }
  
@@ -89,7 +98,7 @@ export class App extends React.Component {
             {this.state.ListaPlaylist.result.list.map(user => {
               return (
                 <li>
-                  {user.name}
+                  {user.name}<BotaoDeleta onClick={() => this.apagaPlaylist(user.id)}> X </BotaoDeleta>
                 </li>
               )
             })}
