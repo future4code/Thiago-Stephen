@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import styled from 'styled-components'
+import axios from 'axios'
+import MatchesPage from './components/MatchesPage';
+import HomePage from './components/HomePage'
+
 
 function App() {
-  return (
-   <div>
-    <header>
-      <h3>astroMATCH</h3>
-    </header>
-    <section>
-      <div>
-        <img src="https://picsum.photos/id/1027/200/300" />
-      </div>
-    </section>
-    <footer>
-      <button>X</button>
-      <button>match</button>
-    </footer>
-   </div>
-  );
-}
+  const [currentPage, setCurrentPage] = useState('showPage')
 
+  const changePage = () => {
+   if (currentPage === 'showPage') {
+    setCurrentPage(MatchesPage)  
+  } else {
+      setCurrentPage('showPage')
+
+  }}
+  return (
+    <div>
+      
+      {currentPage !== 'showPage' ? <HomePage /> : <MatchesPage /> }
+    </div>
+  );
+  
+}
 export default App;

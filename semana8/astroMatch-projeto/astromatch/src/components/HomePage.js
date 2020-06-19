@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import MatchesPage from './MatchesPage';
 
 const Container = styled.div`
     display: flex;
@@ -78,11 +79,11 @@ const Container = styled.div`
         left: 100px;
         top: 550px;
     `
-    const ButtonReturn = styled.button`
+    const ButtonMatchs = styled.button`
         position: absolute;
         width: 60px;
         height: 40px;
-        left: 15px;
+        left: 340px;
         top: 15px;
         
     `
@@ -100,62 +101,83 @@ const Container = styled.div`
     `
 
 
-
-function MatchesPage () {
-
+const HomePage = () => {
     
-
-    const [matches, setMatches] = useState([
-        {
-            id: "",
-            photo: "",
-            name: "",
-            bio: "",
-            age: 0
-       }
-    ])
-   
+    
+    
+    const [profile, setProfile] = useState({
+      id: "",
+      photo: "",
+      name: "",
+      bio: "",
+      age: 0
+    })
+    
     useEffect(() => {
-        getMatches()
-      }, [])
-
-    const getMatches = () => {
+      getProfile()
+    }, [])
+  
+    const getProfile = () => {
         axios
-        .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/thiago/matches")
+        .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/thiago/person")
         .then((response) => {
-          setMatches(response.data.matches)
+          setProfile(response.data.profile)
         })
         .catch(err => {
           console.log(err)
         })
-    }  
+    }
 
+    
+
+    const chossePerson = (chosse) => {
+        const body = {
+            id: (profile.id),
+            choice: chosse
+    }
+        axios
+        .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/thiago/choose-person", body)
+        .then(() => {
+            getProfile()
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+    }
+    
+    const handleLikeprofile = () => {
+        chossePerson(true)
+    }
+    const handleDeslikeProfile = () => {
+        getProfile()
+    }
+
+    
     return (
         <Container>
             <DivApp>
                 <Header>
                     <Logo>astroMATCH</Logo>
-                    <ButtonReturn>
-                        return
-                    </ButtonReturn>
+                    <ButtonMatchs>
+                        matchs
+                    </ButtonMatchs>
                 </Header>
-            <ul>
-                {matches.map(match => {
-                    return(
-                        <li>{match.name}</li>
-                    )
-                })}
-
-            </ul>
-            <footer>
-               
-            </footer>
+                <DivInfo>
+                    <DivImage>
+                        <Image src={profile.photo} />
+                    </DivImage>
+                    <DivText>
+                        <p>{profile.name}, {profile.age}</p>
+                        <p>{profile.bio}</p>
+                    </DivText>
+                </DivInfo>
+                <footer>
+                    <ButtonDeslike onClick={handleDeslikeProfile}>X</ButtonDeslike>
+                    <ButtonLike onClick={handleLikeprofile}>like</ButtonLike>
+                </footer>
             </DivApp>
         </Container>
     )
 }
-
-
-
-
-export default MatchesPage
+export default HomePage
