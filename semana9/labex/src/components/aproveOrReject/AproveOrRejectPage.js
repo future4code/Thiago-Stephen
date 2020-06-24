@@ -1,8 +1,10 @@
 import React from 'react';
 
 import { useHistory } from 'react-router-dom'
+import { useProtectedPage } from '../hooks/useProtectedPage';
 
 function AproveOrRejectPage () {
+    useProtectedPage()
     const history = useHistory()
     const backToPage = () =>{
         history.push('/SelectPassengerPage')

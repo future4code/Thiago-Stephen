@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
-
 import HomePage from '../home/HomePage';
 import AproveOrRejectPage from '../aproveOrReject/AproveOrRejectPage';
 import CreateTravelPage from '../createTravel/CreateTravelPage';
@@ -8,10 +7,10 @@ import GeneralPage from '../general/GeneralPage';
 import ListTripPage from '../listTrip/ListTripPage';
 import LoginPage from '../login/LoginPage';
 import PassengerListPage from '../passengerList/PassengerListPage';
-import RegisterUserPage from '../registerUser/RegisterUserPage';
 import SelectPassengerPage from '../selectPassenger/SelectPassenger';
 import SelectUserPage from '../selectUser/SelectUserPage';
 import TravelDetailsPage from '../travelDetails/TravelDetailsPage';
+import { RegisterUserPage } from '../registerUser/RegisterUserPage';
 
     const Router = () => {
         return (

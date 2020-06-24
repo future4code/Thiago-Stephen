@@ -1,7 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
+import { useProtectedPage } from '../hooks/useProtectedPage';
 
 function CreateTravelPage () {
+    useProtectedPage()
     const history = useHistory()
     const backToPage = () => {
         history.push('/ListTripPage')

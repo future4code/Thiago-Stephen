@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
+import { useProtectedPage } from '../hooks/useProtectedPage';
 
-function RegisterUserPage () {
+export const RegisterUserPage = () => {
+  useProtectedPage()
   const history = useHistory()
   const backToPage = () => {
     history.push('/SelectUser')
@@ -19,4 +21,3 @@ function RegisterUserPage () {
   );
 }
 
-export default RegisterUserPage;
