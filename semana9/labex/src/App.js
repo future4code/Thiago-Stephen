@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.css';
+import Header from './components/layot/Header'
 
 import Router from './components/router/Router';
 
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <Header>
         oi
-      </header>
+      </Header>
+      
         <Router />
+      
+        
     </div>
   );
 }

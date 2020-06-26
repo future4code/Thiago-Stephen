@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .LoginInput {
   margin-bottom: 30px;
@@ -9,6 +7,13 @@
 }
 
 
+.ImagemFoguete {
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  right: -40px;
+  top: 50px;
+}
 
 
 
