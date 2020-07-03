@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+  
+}
+.FlexContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.FlexContainer > div {
+  margin: 10px;
+  padding: 20px;
+  font-size: 20px;
+  height: 400px;
+  width: 120px;
+}
+
+.ItemTarefa {
+  font-size: 14px;
+}
+
+.Segunda {
+  border: 1px solid black;
+  font-size: 12px;
+}
+.Terca {
+  border: 1px solid black;
+}
+.Quarta {
+  border: 1px solid black;
+}
+.Quinta {
+  border: 1px solid black;
+}
+.Sexta {
+  border: 1px solid black;
+}
+.Sabado {
+  border: 1px solid black;
+}
+.Domingo {
+  border: 1px solid black;
+}
+
+.CriaTarefa {
+  border: 1px solid black;
+  height: 100px;
+}
