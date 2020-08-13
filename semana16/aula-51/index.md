@@ -62,3 +62,22 @@ SELECT id, name from actor WHERE id = "002"
 
 ### **d:**
 - SELECT * FROM actor WHERE (name LIKE "%A%" OR name LIKE "%a%" OR name LIKE "%G%" OR "%g%") AND salry BETWEEN 350000 and 900000;
+
+# **Exercicio 4**
+### **a:**
+~~~~
+CREATE TABLE Films (
+	id VARCHAR (255)  PRIMARY KEY,
+    title VARCHAR (255) NOT NULL,
+    synopsis TEXT (255) NOT NULL,
+    launch_date DATE NOT NULL,
+    rated INT NOT NULL
+);
+~~~~
+
+
+
+
+
+
+
