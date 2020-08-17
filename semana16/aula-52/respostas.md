@@ -68,7 +68,101 @@ SELECT SUM(salry) FROM actor;
 
 # **Exercicio 5**
 ### **a:**
+ela separa a quantidade de usuarios por genero.
 
+### **b:**
+~~~~
+SELECT id, name FROM Actor ORDER BY name;
+~~~~
+
+### **c:**
+~~~~
+SELECT * FROM Actor ORDER BY salary;
+~~~~
+
+### **d:**
+~~~~
+SELECT * FROM Actor ORDER BY salary DESC LIMIT 3;
+~~~~
+
+### **e:**
+~~~~
+SELECT AVG(salary), gender FROM Actor GROUP BY gender;
+~~~~
+# **Exercicio 6**
+### **a:**
+~~~~
+ALTER TABLE Movies ADD playing_limit_date VARCHAR(255);
+~~~~
+
+### **b:**
+~~~~
+AlTER TABLE Movies CHANGE rating rating FLOAT NOT NULL;
+~~~~
+
+### **c:**
+~~~~
+UPDATE Movies SET playing_limit_date = "2020-08-30" WHERE id = 002;
+~~~~
+
+### **d:**
+~~~~
+DELETE FROM Movies WHERE id = "001";
+UPDATE Movies SET synopsis = "teste" WHERE id = "001";
+~~~~
+estranho que ele volte um resultado positivo. lembro que em aula o professor explicou que seria positivo a resposta pois o sql vai procurar o id 001 assim voltando que foi realizada a busca pelo id 001. 
+
+# **Exercicio 7**
+### **a:**
+~~~~
+SELECT COUNT(*) FROM Movies WHERE rating > 7.5;
+~~~~
+
+### **b:**
+~~~~
+SELECT AVG(rating) FROM Movies;
+~~~~
+
+### **c:**
+~~~~
+SELECT COUNT(*) FROM Movies;
+~~~~
+
+### **d:**
+~~~~
+SELECT COUNT(*) FROM Movies WHERE release_date < CURDATE();
+~~~~
+
+### **e:**
+~~~~
+SELECT MAX(rating) FROM Movies;
+~~~~
+
+### **f:**
+~~~~
+SELECT MIN(rating) FROM Movies;
+~~~~
+
+# **Exercicio 8**
+### **a:**
+~~~~
+SELECT * FROM Movies ORDER BY title;
+~~~~
+
+### **b:**
+~~~~
+SELECT * FROM Movies ORDER BY title DESC LIMIT 5;
+~~~~
+
+### **c:**
+~~~~
+SELECT * FROM Movies ORDER BY release_Date DESC LIMIT 3;
+~~~~
+
+### **d:**
+~~~~
+SELECT * FROM Movies ORDER BY rating DESC LIMIT 3;
+~~~~
 
 
 
