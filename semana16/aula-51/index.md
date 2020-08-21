@@ -7,7 +7,7 @@ SHOW DATABASES = exibe uma tabelinha com o nome da database schema
 SHOW TABLES =  exibe a tabela criada
 
 ### **c:**
-não consegui usar o comando DESCRIBE e SHOW actor
+o comando DESCRIBE exibe a tabela e as expecificações de cada coluna. o tipo e por exemplo se ela pode ser null.
 
 # **Exercicio 2**
 ### **a:**
@@ -50,7 +50,7 @@ ele retornou apenas os campos null
 esse erro retorna porque não tem a coluna nome na tabela ( na tabela a coluna se chama name)
 SELECT id, name from actor WHERE id = "002"
 
-# **Exercicio 3**
+# **Exercicio 4**
 ### **a:**
 - ela seleciona todas as colunas da tabela actor. com nome iniciando com a letra A e ou J com salarios acima dos 300000
 
@@ -63,7 +63,7 @@ SELECT id, name from actor WHERE id = "002"
 ### **d:**
 - SELECT * FROM actor WHERE (name LIKE "%A%" OR name LIKE "%a%" OR name LIKE "%G%" OR "%g%") AND salry BETWEEN 350000 and 900000;
 
-# **Exercicio 4**
+# **Exercicio 5**
 ### **a:**
 ~~~~
 CREATE TABLE Films (
@@ -75,9 +75,34 @@ CREATE TABLE Films (
 );
 ~~~~
 
+# **Exercicio 6**
+### **b:**
+~~~~
+SELECT * FROM Movies WHERE title = "Tropa de Elite";
+~~~~
 
+### **c:** 
+~~~~
+SELECT id, title, synopsis FROM Movies WHERE rating > 6;
+~~~~
 
+# **Exercicio 7**
+### **a:**
+~~~~
+SELECT * FROM Movies WHERE title LIKE "%vida%";
+~~~~
 
+### **b:**
+~~~~
+SELECT * FROM Movies WHERE title LIKE "%cachorro%" OR synopsis LIKE "%bastante%";
+~~~~
 
+### **c:**
+~~~~
+SELECT * FROM Movies WHERE release_date < "2020-05-04";
+~~~~
 
-
+### **d:**
+~~~~
+SELECT * FROM Movies WHERE release_date < "2020-05-04" AND (title LIKE "%Tropa%" OR synopsis LIKE "%astro%") AND rating > 7;
+~~~~
